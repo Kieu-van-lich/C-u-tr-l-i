@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8">
+  <title>Câu trả lời</title>
+  <link rel="stylesheet" href="câu trả lời.css">
+  <style>
+    body {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      min-height: 100vh;
+      background-color: #f0f4f8;
+      font-family: Arial, sans-serif;
+    }
+
+    .card {
+      text-align: center;
+      transition: transform 0.3s ease;
+    }
+
+    .card-btn {
+      margin: 8px;
+      font-size: 16px;
+      transition: all 0.3s ease;
+    }
+
+    .grow {
+      transform: scale(var(--scale, 1));
+    }
+  </style>
+</head>
+<body>
+  <div class="card">
+    <img src="https://image.dienthoaivui.com.vn/x,webp,q90/https://dashboard.dienthoaivui.com.vn/uploads/dashboard/editor_upload/ug7CxfBBFLcewYh2iSlZop88FgVNRpvhFvwNSrTA.jpg" alt="Card image">
+    <div class="card-content">
+      <h3>Bạn nghĩ có hay không</h3>
+      <button id="yesBtn" class="card-btn">Có</button>
+      <button id="noBtn" class="card-btn grow">Không</button>
+    </div>
+  </div>
+
+  <script>
+    const yesBtn = document.getElementById("yesBtn");
+    const noBtn = document.getElementById("noBtn");
+
+    let scale = 1;
+    let firstClick = true;
+
+    yesBtn.addEventListener("click", () => {
+      // Phóng to nút Không
+      scale += 0.3;
+      noBtn.style.setProperty("--scale", scale);
+      noBtn.style.transform = `scale(${scale})`;
+
+      // Đổi text nút Có sau lần đầu
+      if (firstClick) {
+        yesBtn.textContent = "Em nghĩ vậy sao?";
+        firstClick = false;
+      }
+    });
+
+    noBtn.addEventListener("click", () => {
+      // Chuyển sang trang mới với nội dung "tôi biết sẽ như vậy mà"
+      document.body.innerHTML = `
+        <div style="display:flex;justify-content:center;align-items:center;height:100vh;font-size:24px;font-family:Arial;">
+          tôi biết sẽ như vậy mà 😏
+        </div>
+      `;
+    });
+  </script>
+</body>
+</html>

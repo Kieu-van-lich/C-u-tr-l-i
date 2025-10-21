@@ -1,0 +1,45 @@
+/* a) Card có viền và border radius */
+.card {
+    border: 1px solid #ccc;       /* Viền mảnh màu xám nhạt */
+    border-radius: 10px;          /* Bo tròn góc */
+    width: 300px;                 /* Độ rộng card */
+    overflow: hidden;             /* Giúp bo góc ảnh phía trên */
+    transition: box-shadow 0.3s;  /* Hiệu ứng mượt khi hover */
+}
+
+/* b) Ảnh trong card có width 100% */
+.card img {
+    width: 100%;
+    display: block; /* Bỏ khoảng trống dưới ảnh */
+}
+
+/* c) Tiêu đề có màu xanh dương */
+.card-content h3 {
+    color: blue;
+    margin: 10px 0;
+}
+
+/* Nội dung của card */
+.card-content {
+    padding: 15px;
+}
+
+/* d) Nút có hover effect */
+.card-btn {
+    background-color: #4CAF50; /* Xanh lá */
+    color: white;
+    border: none;
+    padding: 10px 15px;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.card-btn:hover {
+    background-color: #45a049; /* Đậm hơn khi hover */
+}
+
+/* e) Card có shadow khi hover */
+.card:hover {
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+}
